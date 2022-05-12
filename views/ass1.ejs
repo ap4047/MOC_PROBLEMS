@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment1</title>
+    <link rel="stylesheet" href="./ass1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main-container">
+    <div class="container">
+    <div class="mainwel">
+        <h2>Welcome</h2>
+        <ul class="list">
+          <li></li>
+        </ul>
+    </div>
+   
+        <form action="/" method="post">
+          <input placeholder="Name" name="name" type="text" required>
+          <input placeholder="Roll No" name="Roll_No" type="text" required>
+          <input placeholder="WAD Marks" name="WAD" type="Number" required>
+          <input placeholder="CC Marks" name="CC" type="Number" required>
+          <input placeholder="DSBDA Marks" name="DSBDA" type="Number" required>
+          <input placeholder="CNS Marks" name="CNS" type="Number" required>
+          <input placeholder="AI Marks" name="AI" type="Number" required>
+          <br>
+          <button type="submit">Submit</button>
+      </form>
+      <div>
+        <h1> for update enter the name and marks of the students</h1>
+        
+        <form action="/update" method="post">
+          <input placeholder="Name" name="name" type="text" required>
+          <input placeholder="Roll No" name="Roll_No" type="text" required>
+          <input placeholder="WAD Marks" name="WAD" type="Number" required>
+          <input placeholder="CC Marks" name="CC" type="Number" required>
+          <input placeholder="DSBDA Marks" name="DSBDA" type="Number" required>
+          <input placeholder="CNS Marks" name="CNS" type="Number" required>
+          <input placeholder="AI Marks" name="AI" type="Number" required>
+          <br>
+          <button type="submit">Submit</button>
+      </form>
+      <h1>enter roll no of studnet to delete</h1>
+      <form action="/delete" method="post">
+       
+        <input placeholder="Roll No" name="Roll_No" type="text" required>
+        
+   
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+      </div>
+ <h1>previous stduent data</h1>
+ <h3>total number of students are <%= count%></h3>
+ <div>
+  <table>
+    <tr>
+      <th>
+        Student Name
+      </th>
+      <th>
+       Roll NO
+      </th>
+      <th>
+        WAD
+      </th>
+      <th>
+       CC
+      </th>
+      <th>
+    DSBDA
+      </th>
+      <th>
+       CNS
+      </th>
+      <th>
+       CC
+       </th>
+    </tr>
+   <%studentList.forEach(function(student){
+   %>
+    
+    <tr>
+      <td>
+        <%=student.studentname%>
+      </td>
+      <td>
+        <%=student.roll_no%>
+      </td>
+      <td>
+         <%=student.WAD%>
+      </td>
+      <td>
+        <%=student.CC%>
+      </td>
+      <td>
+       <%=student.DSBDA%>
+      </td>
+      <td>
+        <%=student.CNS%>
+      </td>
+      <td>
+        <%=student.CC%>
+       </td>
+    </tr>
+
+   
+
+  <%}) %>
+</table>
+</div>
+
+<div>
+  <h1>more than 25 in cns</h1>
+  <table>
+    <tr>
+      <th>
+        Student Name
+      </th>
+      <th>
+       Roll NO
+      </th>
+      <th>
+        WAD
+      </th>
+      <th>
+       CC
+      </th>
+      <th>
+    DSBDA
+      </th>
+      <th>
+       CNS
+      </th>
+      <th>
+       CC
+       </th>
+    </tr>
+   <%studentList.forEach(function(student){
+     if(student.CNS>25){%>
+    
+    <tr>
+      <td>
+        <%=student.studentname%>
+      </td>
+      <td>
+        <%=student.roll_no%>
+      </td>
+      <td>
+         <%=student.WAD%>
+      </td>
+      <td>
+        <%=student.CC%>
+      </td>
+      <td>
+       <%=student.DSBDA%>
+      </td>
+      <td>
+        <%=student.CNS%>
+      </td>
+      <td>
+        <%=student.CC%>
+       </td>
+    </tr>
+
+   
+
+  <%}}) %>
+</table>
+ </div>
+    
+    </div>
+    </div>
+        <script src="../Assignment 3b/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
